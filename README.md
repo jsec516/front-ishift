@@ -1,10 +1,2 @@
-# ngPlay
-angular2 play repository
+# ishift-frontend
 
-## Installation instruction
-```
-npm install
-npm run fix:ng2
-npm run postinstall
-npm start
-```
