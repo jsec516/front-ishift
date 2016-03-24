@@ -1,0 +1,32 @@
+<section class="content-header" protected>
+    <h1>
+        Rooms
+        <small>Setup Rooms</small>
+     </h1>
+    <ol class="breadcrumb">
+        <li><a [routerLink]="['/Dashboard']" href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a [routerLink]="['/Resource']" href="#"><i class="fa fa-map-marker"></i> Rooms</a></li>
+        <li class="active">Edit</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">
+                        Edit Room
+                     </h3>
+                    <div class="box-tools">
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <resource-form></resource-form>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+</section>

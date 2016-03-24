@@ -1,0 +1,174 @@
+<!-- Custom Tabs -->
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#staff_tb" data-toggle="tab">Staff</a></li>
+        <li><a href="#wh_tb" data-toggle="tab" id="stb">Working Hours</a></li>
+        <li><a href="#service_tb" data-toggle="tab" id="stb">Services</a></li>
+        <li><a href="#sch_tb" data-toggle="tab" id="stb">Scheduler Config</a></li>
+    </ul>
+    <!-- form start -->
+    <form class="form-horizontal">
+        <div class="tab-content">
+            <div class="tab-pane pd20 active" id="staff_tb">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Full Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="password" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="rpassword" class="col-sm-2 control-label">Retype Password</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="rpassword" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="srole" class="col-sm-2 control-label">Security Role</label>
+                    <div class="col-sm-6">
+                        <select id="srole" class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Alabama</option>
+                            <option>Alaska</option>
+                            <option>California</option>
+                            <option>Delaware</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Washington</option>
+                        </select>
+                        <ul class="list-unstyled cl-c9">
+                            <li>Super Administrator can see everyone's appointments</li>
+                            <li>Administrator can create everyone's appointments</li>
+                            <li>Practitioner can manage their own appointments</li>
+                            <li>View Only staff can only view data</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="phone" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="skype" class="col-sm-2 control-label">Skype</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="skype" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-2 control-label">&nbsp;</label>
+                    <label class="col-sm-6">
+                        <input type="checkbox" class="minimal" name="status" checked> Active
+                    </label>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="submit" [routerLink]="['/Staff']" class="btn btn-default">Cancel</button>
+                        <button type="submit" (click)="showNext($event, '#stb')" class="btn btn-info">Next</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane pd20" id="wh_tb">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name of Staff :</label>
+                    <div class="col-sm-6 right-label">
+                        Jahidul Islam
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-2 control-label">Working Hours</label>
+                    <div class="col-sm-6 right-label">
+                        <schedule></schedule>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="submit" [routerLink]="['/Staff']" class="btn btn-default">Cancel</button>
+                        <button type="submit" (click)="showNext($event, '#stb')" class="btn btn-info">Next</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane pd20" id="service_tb">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Services</label>
+                    <div class="col-sm-6">
+                        <ul class="list-unstyled">
+                            <li>
+                                <input type="checkbox" class="minimal" name="services[]" checked> Acupuncture</li>
+                            <li>
+                                <input type="checkbox" class="minimal" name="services[]" checked> Bio Meridian Test</li>
+                            <li>
+                                <input type="checkbox" class="minimal" name="services[]" checked> Psychotherapy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="submit" [routerLink]="['/Staff']" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-info">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane pd20" id="sch_tb">
+                <div class="form-group">
+                    <label for="sortw" class="col-sm-2 control-label">Sort Weight</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="sortw" />
+                        <ul class="list-unstyled cl-c9">
+                            <li>This value helps to sort the staff when displayed.</li>
+                            <li>Heavier numbers sink to the bottom and smaller stay on top.</li>
+                            <li>If 2 staff have the same weight, they will be sorted alphabetically.</li>
+                            <li>This defaults to 0 so all names sort alphabetically.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pp" class="col-sm-2 control-label">Profile Picture</label>
+                    <div class="col-sm-6">
+                        <input type="file" id="pp" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sbio" class="col-sm-2 control-label">Staff Bio</label>
+                    <div class="col-sm-6">
+                        <textarea class="form-control" id="sbio">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="etemp" class="col-sm-2 control-label">Email Instruction</label>
+                    <div class="col-sm-10">
+                        <p>
+                            If you want some custom text to be added to each email, the data in this field will be get added to the email through %PROFESSIONAL_INSTRUCTIONS%
+                            tag
+                        </p>
+                        <textarea class="form-control" id="etemp"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="submit" [routerLink]="['/Staff']" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-info">Save</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+    </form>
+</div>
+<!-- nav-tabs-custom -->
+
+<!-- modal -->
+<!--<a href="#" data-toggle="modal" data-target="#wchModal">Add Schedule</a>-->

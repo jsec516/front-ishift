@@ -1,0 +1,73 @@
+<!-- Custom Tabs -->
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#service_tb" data-toggle="tab">Basic</a></li>
+    </ul>
+    <!-- form start -->
+    <form class="form-horizontal">
+        <div class="tab-content">
+            <div class="tab-pane pd20 active" id="service_tb">
+                <div [hidden]="type==='holiday'" class="form-group">
+                    <label for="staff" class="col-sm-2 control-label">Staff</label>
+                    <div class="col-sm-6">
+                        <select id="staff" class="form-control select2" style="width: 100%;">
+                            <option value="">select</option>
+                            <option>Mr. X</option>
+                            <option>Mr. Y</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sdate" class="col-sm-2 control-label">Start Date</label>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="sdate">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edate" class="col-sm-2 control-label">End Date</label>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <input type="text" class="form-control pull-right" id="edate">
+                        </div>
+                        <!-- /.input group -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reason" class="col-sm-2 control-label">Reason</label>
+                    <div class="col-sm-6">
+                        <select id="reason" class="form-control select2" style="width: 100%;">
+                            <option value="">select</option>
+                            <option>Personal Holiday</option>
+                            <option>Dr. Appts.</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="desc" class="col-sm-2 control-label">Description</label>
+                    <div class="col-sm-6">
+                        <textarea id="desc" class="form-control">
+                        </textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="submit" [routerLink]="['/Vacation']" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-info">Save</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+    </form>
+</div>
+<!-- nav-tabs-custom -->

@@ -1,0 +1,30 @@
+{
+  "name": "Qclinic-Admin",
+  "description": "Qclinic Admin Project",
+  "main": "",
+  "authors": [
+    "MD. Jahidul Islam <exporter2022@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#~4.5.0",
+    "Ionicons": "ionicons#~2.0.1",
+    "AdminLTE": "admin-lte#~2.3.2",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
+    "jquery-ui": "~1.11.4"
+  }
+}

@@ -1,0 +1,33 @@
+<section class="content-header" protected>
+    <h1>
+        Patients
+        <small>Lookup Patients</small>
+     </h1>
+    <ol class="breadcrumb">
+        <li><a [routerLink]="['/Dashboard']" href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Patients</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">
+                        Patient Search
+                     </h3>
+                    <div class="box-tools">
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <patient-search (term)="search($event)" ></patient-search>
+                    <regular-table *ngIf="searched" [data]="tblContent"></regular-table>
+                </div>
+                <!-- /.box-body -->
+            </div>
+        </div>
+    </div>
+</section>
+

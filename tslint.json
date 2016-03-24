@@ -1,0 +1,31 @@
+{
+    "rules": {
+        "class-name": true,
+        "curly": false,
+        "eofline": true,
+        "indent": "spaces",
+        "max-line-length": [
+            true,
+            200
+        ],
+        "no-arg": true,
+        "no-construct": true,
+        "no-duplicate-key": true,
+        "no-duplicate-variable": true,
+        "no-empty": false,
+        "no-eval": true,
+        "no-trailing-comma": true,
+        "no-use-before-declare": true,
+        "one-line": [
+            true,
+            "check-open-brace",
+            "check-catch",
+            "check-else"
+        ],
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ],
+        "variable-name": false
+    }
+}

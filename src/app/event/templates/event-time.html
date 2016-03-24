@@ -1,0 +1,53 @@
+<!-- form start -->
+<form class="form-horizontal">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label for="service" class="col-sm-4 control-label">Service</label>
+            <div class="col-sm-8">
+                <select id="service" class="form-control select2">
+                    <option selected="selected">Select</option>
+                    <option>Acupuncture</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="service" class="col-sm-4 control-label">Practitioner</label>
+            <div class="col-sm-8">
+                <select id="service" class="form-control select2">
+                    <option selected="selected">Select</option>
+                    <option>Rebecca Risk</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="desc" class="col-sm-4 control-label">Selected Date</label>
+            <div class="col-sm-8">
+                <div class="inline-date"></div>
+                <p><span class="green-box"></span> Dates available</p>
+                <p><span class="dark-box"></span> Dates not available</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <span>Select time for appointment 
+            <label>on Wed, 17-Feb-2016</label>
+        </span>
+        <ul class="list-unstyled time-slots">
+            <li>
+                <button (click)="timeSelected('08:00AM-09:00AM')" class="btn btn-default">08:00AM-09:00AM</button>
+            </li>
+            <li>
+                <button (click)="timeSelected('08:00AM-09:00AM')" class="btn btn-default">08:00AM-09:00AM</button>
+            </li>
+            <li>
+                <button (click)="timeSelected('08:00AM-09:00AM')" class="btn btn-default">08:00AM-09:00AM</button>
+            </li>
+            <li>
+                <button (click)="timeSelected('08:00AM-09:00AM')" class="btn btn-default">08:00AM-09:00AM</button>
+            </li>
+            <li>
+                <button (click)="timeSelected('08:00AM-09:00AM')" class="btn btn-default">08:00AM-09:00AM</button>
+            </li>
+        </ul>
+    </div>
+</form>

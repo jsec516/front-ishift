@@ -1,0 +1,96 @@
+<!-- Custom Tabs -->
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#appt_tb" data-toggle="tab">Appointment</a></li>
+    </ul>
+    <!-- form start -->
+    <form class="form-horizontal">
+        <div class="tab-content">
+            <div class="tab-pane pd20 active" id="appt_tb">
+                <div class="form-group">
+                    <label for="staff" class="col-sm-2 control-label">Practitioner</label>
+                    <div class="col-sm-6 pdt7">
+                        <a href="">{{data.staff.name}}</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="desc" class="col-sm-2 control-label">Service</label>
+                    <div class="col-sm-6 pdt7">
+                        <a href="">{{data.service.name}}</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="patient" class="col-sm-2 control-label">Patient</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" #ptEntry value="patient" />
+                        <ul class="list-unstyled pt-list">
+                            <li *ngFor="#pt of patients">{{pt.name}}</li>
+                            <li *ngIf="patients.length===0">Add New</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-sm-2 control-label">Date</label>
+                    <div class="col-sm-6 pdt7">
+                        {{data.date}}(<a href="">Change</a>)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="time" class="col-sm-2 control-label">Appointment</label>
+                    <div class="col-sm-6 pdt7">
+                        {{data.time}}(<a href="">Change</a>)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="crm" class="col-sm-2 control-label">Patient Email Reminder</label>
+                    <div class="col-sm-6">
+                        <select id="srole" class="form-control select2" style="width:100px;">
+                            <option selected="selected">24 Hrs</option>
+                            <option>12 Hrs</option>
+                        </select>
+                        Before the appointment
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="crm" class="col-sm-2 control-label">Practitioner Reminder</label>
+                    <div class="col-sm-6">
+                        <select id="srole" class="form-control select2" style="width:100px;">
+                            <option selected="selected">24 Hrs</option>
+                            <option>12 Hrs</option>
+                        </select>
+                        Before the appointment
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="crm" class="col-sm-2 control-label">Patient Text Reminder</label>
+                    <div class="col-sm-6">
+                        <select id="srole" class="form-control select2" style="width:100px;">
+                            <option selected="selected">24 Hrs</option>
+                            <option>12 Hrs</option>
+                        </select>
+                        Before the appointment
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="comment" class="col-sm-2 control-label">Comments</label>
+                    <div class="col-sm-6">
+                        <textarea id="comment" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-8">
+                        <button type="submit" class="btn btn-info"><i class="fa fa-floppy-o"></i> Save</button>
+                        <button *ngIf="edit" class="btn btn-danger"><i class="fa fa-ban"></i> Cancel Appointment</button>
+                        <button *ngIf="edit" class="btn btn-success"><i class="fa fa-check-circle-o"></i> Completed</button>
+                        <button *ngIf="edit" class="btn btn-default"><i class="fa fa-envelope"></i> Resend Appt. Email</button>
+                        <button *ngIf="edit" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+                        <button class="btn btn-default"><i class="fa fa-times-circle-o"></i> Close</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+    </form>
+</div>
+<!-- nav-tabs-custom -->

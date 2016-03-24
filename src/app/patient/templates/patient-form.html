@@ -1,0 +1,141 @@
+<!-- Custom Tabs -->
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#pi_tb" data-toggle="tab">Patient Info</a></li>
+        <li><a id="ai_li" href="#ai_tb" data-toggle="tab">Address Info</a></li>
+        <li><a href="#upa_tb" data-toggle="tab">Upcoming Appts</a></li>
+        <li><a href="#cla_tb" data-toggle="tab">Closed Appts</a></li>
+        <li><a href="#caa_tb" data-toggle="tab">Cancelled Appts</a></li>
+    </ul>
+    <!-- form start -->
+    <form class="form-horizontal">
+        <div class="tab-content">
+            <div class="tab-pane pd20 active" id="pi_tb">
+                <div class="form-group">
+                    <label for="fName" class="col-sm-2 control-label">First Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="fName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lName" class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="lName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dob" class="col-sm-2 control-label">Date of Birth</label>
+                    <div class="col-sm-6">
+                        <div class='input-group dob'>
+                            <input type="text" class="form-control" id="dob" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dob" class="col-sm-2 control-label">Gender</label>
+                    <div class="col-sm-6 pdt7">
+                        <label>
+                            <input type="radio" name="r1" class="minimal" checked> Male
+                        </label>
+                        <label>
+                            <input type="radio" name="r1" class="minimal"> Female
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="hp" class="col-sm-2 control-label">Home Phone</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="hp" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cp" class="col-sm-2 control-label">Cell Phone</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="cp" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="wp" class="col-sm-2 control-label">Work Phone</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="wp" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tz" class="col-sm-2 control-label">Timezone</label>
+                    <div class="col-sm-6">
+                        <select id="srole" class="form-control select2" style="width:100%">
+                            <option selected="selected">America/Tortola</option>
+                            <option>America/Tortola</option>
+                            <option>America/Tortola</option>
+                            <option>America/Tortola</option>
+                            <option>America/Tortola</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-2 control-label">&nbsp;</label>
+                    <label class="col-sm-6">
+                        <input type="checkbox" class="minimal" name="status" checked> Active
+                    </label>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="submit" [routerLink]="['/Patient']" class="btn btn-default">Cancel</button>
+                        <button (click)="showNext($event, '#ai_li')" type="submit" class="btn btn-info">Next</button>
+                        <button type="submit" class="btn btn-info">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane pd20" id="ai_tb">
+                <div class="form-group">
+                    <label for="addr" class="col-sm-2 control-label">Address</label>
+                    <div class="col-sm-6">
+                        <textarea class="form-control" id="addr"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country" class="col-sm-2 control-label">Country</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="country" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="city" class="col-sm-2 control-label">City</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="city" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="zip" class="col-sm-2 control-label">Zip</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="zip" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="submit" [routerLink]="['/Patient']" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-info">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane pd20" id="upa_tb">
+            </div>
+            <div class="tab-pane pd20" id="cla_tb">
+            </div>
+            <div class="tab-pane pd20" id="caa_tb">
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+    </form>
+</div>
+<!-- nav-tabs-custom -->

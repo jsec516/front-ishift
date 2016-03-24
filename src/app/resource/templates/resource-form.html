@@ -1,0 +1,53 @@
+<!-- Custom Tabs -->
+<div class="nav-tabs-custom">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#resource_tb" data-toggle="tab">Room</a></li>
+        <li><a href="#service_tb" data-toggle="tab" id="stb">Services</a></li>
+    </ul>
+    <!-- form start -->
+    <form class="form-horizontal">
+        <div class="tab-content">
+            <div class="tab-pane pd20 active" id="resource_tb">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="col-sm-2 control-label">&nbsp;</label>
+                    <label class="col-sm-6">
+                        <input type="checkbox" class="minimal" name="status" checked> Active
+                    </label>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="submit" [routerLink]="['/Resource']" class="btn btn-default">Cancel</button>
+                        <button type="submit" (click)="showNext($event, '#stb')" class="btn btn-info">Next</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane pd20" id="service_tb">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Services</label>
+                    <div class="col-sm-6">
+                        <ul class="list-unstyled">
+                            <li><input type="checkbox" class="minimal" name="services[]" checked> Acupuncture</li>
+                            <li><input type="checkbox" class="minimal" name="services[]" checked> Bio Meridian Test</li>
+                            <li><input type="checkbox" class="minimal" name="services[]" checked> Psychotherapy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="submit" [routerLink]="['/Resource']" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-info">Save</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+    </form>
+</div>
+<!-- nav-tabs-custom -->
