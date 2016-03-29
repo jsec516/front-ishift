@@ -19,8 +19,7 @@
                      </h3>
                     <div class="box-tools">
                     </div>
-                    <a *ngIf="tblContent.actions && tblContent.actions.canCreate" 
-                        href="{{tblContent.actions.canCreate.url}}regular" data-toggle="tooltip" data-placement="top" title="add new regular service">
+                    <a *ngIf="tblContent.actions && tblContent.actions.canCreate" [routerLink]="['../ServiceCreate', {type: 'regular'}]" data-toggle="tooltip" data-placement="top" title="add new regular service">
                             <i class="fa fa-plus-circle"></i> Add Regular Service
                         </a>
                     <a *ngIf="tblContent.actions && tblContent.actions.canCreate" 

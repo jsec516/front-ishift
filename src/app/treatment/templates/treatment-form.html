@@ -4,20 +4,20 @@
         <li class="active"><a href="#service_tb" data-toggle="tab">Service</a></li>
     </ul>
     <!-- form start -->
-    <form class="form-horizontal">
+    <form class="form-horizontal" [ngFormModel]="treatForm" (ngSubmit)="onSubmit(treatForm.value)">
         <div class="tab-content">
             <div class="tab-pane pd20 active" id="service_tb">
                 <div class="form-group">
                     <label for="name" class="col-sm-2 control-label">Name</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="name" />
+                        <input type="text" [ngFormControl]="treatForm.controls['name']" class="form-control" id="name" />
                         <p>Enter the name of the service. This name will be used while booking the appointment</p>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="desc" class="col-sm-2 control-label">Description</label>
                     <div class="col-sm-6">
-                        <textarea class="form-control" id="desc"></textarea>
+                        <textarea [ngFormControl]="treatForm.controls['description']" class="form-control" id="desc"></textarea>
                         <ul class="list-unstyled">
                             <li>Please describe this service in detail.</li>
                             <li>This description will be displayed to your clients on your public site.</li>
@@ -27,10 +27,10 @@
                 <div class="form-group">
                     <label for="duration" class="col-sm-2 control-label">Duration</label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" value="0" /> Hours
+                        <input type="text" [ngFormControl]="treatForm.controls['durationH']" class="form-control" value="0" /> Hours
                     </div>
                     <div class="col-sm-3">
-                        <select id="srole" class="form-control select2">
+                        <select [ngFormControl]="treatForm.controls['durationM']" id="srole" class="form-control select2">
                             <option selected="selected">0</option>
                             <option>05</option>
                             <option>10</option>
@@ -46,7 +46,7 @@
                     <label for="color" class="col-sm-2 control-label">Color</label>
                     <div class="col-sm-6">
                         <div class="input-group color">
-                            <input type="text" value="" class="form-control" id="color" />
+                            <input type="text" [ngFormControl]="treatForm.controls['color']" class="form-control" id="color" />
                             <span class="input-group-addon"><i></i></span>
                         </div>
                     </div>
@@ -54,27 +54,27 @@
                 <div *ngIf="type==='regular'" class="form-group">
                     <label for="sortw" class="col-sm-2 control-label">Sort Weight</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="sortw" >
+                        <input type="text" [ngFormControl]="treatForm.controls['sortw']" class="form-control" id="sortw" >
                     </div>
                 </div>
                 <div *ngIf="type==='regular'" class="form-group">
-                    <label for="allow" class="col-sm-2 control-label">Allow Multiple Clients</label>
+                    <label for="allowM" class="col-sm-2 control-label">Allow Multiple Clients</label>
                     <div class="col-sm-6">
-                        <input type="checkbox" class="minimal" name="allow" >
+                        <input id="allowM" type="checkbox" [ngFormControl]="treatForm.controls['allowM']" class="minimal" name="allow" >
                         <p>If you checked it, Multiple client can book same slot </p>
                     </div>
                 </div>
                 <div *ngIf="type==='regular'" class="form-group">
-                    <label for="allow" class="col-sm-2 control-label">Show Service on Scheduler</label>
+                    <label for="public" class="col-sm-2 control-label">Show Service on Scheduler</label>
                     <div class="col-sm-6">
-                        <input type="checkbox" class="minimal" name="public" checked>
+                        <input type="checkbox" id="public" class="minimal" name="public"  [ngFormControl]="treatForm.controls['public']">
                         <p>Appear on public scheduler to allow clients to book online </p>
                     </div>
                 </div>
                 <div *ngIf="type==='regular'" class="form-group">
                     <label for="ei" class="col-sm-2 control-label">Email Instruction</label>
                     <div class="col-sm-6">
-                        <textarea class="form-control" id="ei"></textarea>
+                        <textarea class="form-control" id="ei"  [ngFormControl]="treatForm.controls['ei']"></textarea>
                         <p>
                             If you want to add custom text to each email, the data in this field will get added to the email through %REASON_INSTRUCTIONS% tag
                         </p>
@@ -83,7 +83,7 @@
                 <div class="form-group">
                     <label for="status" class="col-sm-2 control-label">&nbsp;</label>
                     <label class="col-sm-6">
-                        <input type="checkbox" class="minimal" name="status" checked> Active
+                        <input type="checkbox" id="status" class="minimal" name="status"  [ngFormControl]="treatForm.controls['status']"> Active
                     </label>
                 </div>
                 <div class="form-group">

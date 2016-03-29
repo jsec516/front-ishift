@@ -31,8 +31,8 @@ export class TreatmentService {
         
         // console.log("sent options : ", options);
         
-        this._http.get(Config.reqDomain + '/api/treat/', options)
-        .map(response => response.json()).subscribe(data => {
+        this._http.get(Config.reqDomain + Config.reqApiPoint + '/services/?page=1&item=10', options)
+            .map(response => response.json()).subscribe(data => {
             // console.log('event response : ', data);
             if(Boolean(data.success)===true){
                 // console.log(data.message);
