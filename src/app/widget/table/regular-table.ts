@@ -18,6 +18,7 @@ export class RegularTable implements OnInit, OnChanges {
     tblHeaders: any;
     tblContents: any;
     tblActions: any;
+    tblKeys: any;
     tblContentsCb: any;
     tblHideID: boolean;
     data: any;
@@ -45,5 +46,6 @@ export class RegularTable implements OnInit, OnChanges {
         this.tblContentsCb = this.data && this.data.callbacks || [];
         this.tblActions = this.data && this.data.actions || {};
         this.tblHideID = this.data && this.data.hideID || false;
+        this.tblKeys = this.data && this.data.keys || false;
     }
 }

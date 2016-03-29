@@ -31,7 +31,7 @@ export class ResourceService {
         
         // console.log("sent options : ", options);
         
-        this._http.get(Config.reqDomain + '/api/rsource/', options)
+        this._http.get(Config.reqDomain + Config.reqApiPoint + '/resources/?page=1&item=10', options)
         .map(response => response.json()).subscribe(data => {
             // console.log('event response : ', data);
             if(Boolean(data.success)===true){

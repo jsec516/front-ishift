@@ -3,6 +3,7 @@ import {RouteConfig, RouterOutlet, ROUTER_DIRECTIVES} from 'angular2/router';
 import {RegularTable} from '../../widget/core';
 import {AuthService, ProtectedDirective} from '../../auth/core';
 import {ResourceService} from '../services/ResourceService';
+import {ResourceCreate} from './resource-create';
 
 @Component({
     selector: 'resources-list',
@@ -24,13 +25,15 @@ export class ResourceList implements OnInit {
 
     ngOnInit() {
         this._resource.resources$.subscribe((data) => {
-            console.log(data);
+            // console.log(data);
             this.tblContent = {
-                'columns': ['ID', 'Title', 'Status'],
+                'columns': ['Title', 'Status', 'Last Modified'],
+                'keys': ['name', 'activeStates', 'updatedAt'],
                 'contents': data.contents,
                 'actions': data.actions,
+                'hideID': true,
                 'callbacks': {
-                    'status': function(value) {
+                    'activeStates': function(value) {
                         let result = value ? 'active' : 'inactive';
                         return result;
                     }

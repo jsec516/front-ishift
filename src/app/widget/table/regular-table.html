@@ -6,11 +6,11 @@
     </tr>
     <tr *ngFor="#tr of tblContents">
         <!--{{tr|json}}-->
-        <td *ngFor="#td of tr | objValues:tblContentsCb:tblHideID" [innerHTML]="td.toString()"></td>
+        <td *ngFor="#td of tr | objValues:tblContentsCb:tblHideID:tblKeys" [innerHTML]="td.toString()"></td>
         <!--<td>John Doe</td>
         <td><span class="label label-success">Approved</span></td>-->
         <td class="action-list text-right">
-            <a *ngIf="tblActions.canEdit" href="{{tblActions.canEdit.url + tr.id}}" data-toggle="tooltip" data-placement="top" title="view details">
+            <a *ngIf="tblActions.canEdit" href="{{tblActions.canEdit.url + tr._id}}" data-toggle="tooltip" data-placement="top" title="view details">
                 <i class="fa fa-sign-in"></i>
             </a>
             <!--<a *ngIf="tblActions.canEdit" href="" data-toggle="tooltip" data-placement="top" title="Deactivate">

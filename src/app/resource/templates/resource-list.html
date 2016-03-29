@@ -17,7 +17,7 @@
                     <h3 class="box-title">
                         List Of Rooms 
                         <a *ngIf="tblContent.actions && tblContent.actions.canCreate" 
-                        href="{{tblContent.actions.canCreate.url}}" data-toggle="tooltip" data-placement="right" title="add new">
+                        [routerLink]="['/Resource', 'ResourceCreate']" data-toggle="tooltip" data-placement="right" title="add new">
                             <i class="fa fa-plus-circle"></i>
                         </a>
                      </h3>

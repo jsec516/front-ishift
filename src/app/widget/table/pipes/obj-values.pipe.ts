@@ -8,13 +8,14 @@ export class ObjValuesPipe implements PipeTransform {
     transform(value: any, args: any[] = null): any {
         var $this = this; // save this
         $this.temp.length = 0;
-        let keys = Object.keys(value);
+        let keys = args[2] || Object.keys(value);
         let callbacks = args[0];
         let hideID = args[1];
+        // console.log('keys are', keys);
         // console.log('callbacks ', callbacks);
         keys.forEach(function(val) {
 
-            if (val === 'id' && hideID) {
+            if (val === '_id' && hideID) {
                 return;
             }
 
