@@ -17,6 +17,7 @@ declare var $: any;
 })
 export class TreatmentForm implements OnInit, AfterViewInit {
     public type: string;
+    public msg: any;
     public treatForm: ControlGroup;
 
     constructor(
@@ -33,7 +34,7 @@ export class TreatmentForm implements OnInit, AfterViewInit {
             'color': [''],
             'sortw': ['0'],
             'allowM': [false],
-            'public': [false],
+            'public': [true],
             'ei': [''],
             'status': [true]
         });
@@ -45,10 +46,14 @@ export class TreatmentForm implements OnInit, AfterViewInit {
     }
 
     onSubmit(value: string){
-        console.log('you submitted value: ', value);
+        this._treat.save(value);
+        // console.log('you submitted value: ', value);
     }
 
     ngOnInit() {
+        this._treat.msg$.subscribe(msg => {
+            this.msg = msg;
+        });
     }
 
     updateFieldValue(field: string, value: any) {

@@ -1,3 +1,8 @@
+<!-- message -->
+<div *ngIf="msg && msg.content" class='row'>
+    <p ngClass="msg.type=='error'?'error':'success'">{{msg.content}}</p>
+</div>
+<!-- end of message  -->
 <!-- Custom Tabs -->
 <div class="nav-tabs-custom">
     <ul class="nav nav-tabs">

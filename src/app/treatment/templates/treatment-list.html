@@ -23,7 +23,7 @@
                             <i class="fa fa-plus-circle"></i> Add Regular Service
                         </a>
                     <a *ngIf="tblContent.actions && tblContent.actions.canCreate" 
-                        href="{{tblContent.actions.canCreate.url}}personal" data-toggle="tooltip" data-placement="top" title="add new personal reason">
+                        [routerLink]="['../ServiceCreate', {type: 'personal'}]" data-toggle="tooltip" data-placement="top" title="add new personal reason">
                             <i class="fa fa-plus-circle"></i> Add Personal Reason
                         </a>
                 </div>
